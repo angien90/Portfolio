@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Angelica Nylander | Portfolio</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Utforska Angelica Nylanders portfolio med projekt inom frontendutveckling – från moderna webbapplikationer till stilren UX/UI-design.">
+    <meta name="keywords" content="Angelica Nylander, frontendutvecklare, portfolio, webbutveckling, HTML, CSS, JavaScript, UX design, UI design, React, GitHub, Git, responsiv design, webbutvecklare Göteborg">
+    <meta name="author" content="Angelica Nylander">
+
+    <!-- Externa CSS-filer -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/angelica-nylander.webp" type="images/jpeg">
+    <link rel="apple-touch-icon" href="images/angelica-nylander.webp">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#fafafa">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Angelica Nylander",
+      "jobTitle": "Frontend Developer",
+      "description": "Angelica Nylander är en frontendutvecklare med kunskaper inom HTML, CSS, JavaScript och React. Se hennes CV med utbildningar, erfarenheter och tekniska färdigheter.",
+      "url": "https://angien90.github.io/Portfolio/",
+      "image": "https://avatars.githubusercontent.com/u/99916077?v=4",
+      "sameAs": [
+        "https://github.com/angien90",
+        "https://www.linkedin.com/in/angelica-nylander-bb894b30/"
+      ]
+    }
+    </script>
+</head>
+
+<body class="light-mode">
+    <header>
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger-btn" aria-label="Meny">☰</button> 
+            <ul class="nav-links"> 
+                <li><a href="#projects">Mina utvalda projekt</a></li>
+                <li><a href="#about">Om mig</a></li>
+                <li><a href="#contact">Kontakta mig</a></li>
+            </ul>
+        </nav>
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+            </label>            
+        </div>
+    </header>
+
+    <aside>
+        <img id="profilePic" class="profilepicture" src="images/angelica-nylander.webp" alt="Profilbild på Angelica Nylander" width="300" />
+        <h1>Angelica Nylander</h1>
+        <h2 class="title">Frontend Developer</h2>
+        
+        <h2>Kort om mig</h2>
+        <p>Frontendstudent med bakgrund inom kvalitet och miljö, brinner för tydlig struktur, tillgänglighet och användarvänlig design. Jag arbetar gärna i team och har ett öga för detaljer som gör skillnad.</p>
+        <p>Jag är en noggrann och pålitlig person som alltid levererar i tid. När jag stöter på något jag inte kan, ser jag det som en möjlighet att utvecklas – jag är snabb på att söka upp information, ta till mig ny kunskap och omsätta den i praktiken. Med ett starkt driv och en vilja att ständigt förbättras tar jag mig an nya utmaningar med stort engagemang.</p>
+    
+        <section class="contact" id="contact">
+            <h2>Kom i kontakt med mig!</h2>
+            <p>Angelica Nylander</p>
+            <p>Frontend developer</p>
+            <p>+46(0)732 09 63 20</p>
+            <p>angelica.nylander@outlook.com</p>
+
+            <span class="contact-icons-aside">
+                <a href="tel:+46732096320" target="_blank" aria-label="Ring mig på telefonnummer 0732 09 63 20">
+                    <img src="images/phone-fill.png" alt="Telefon">
+                    <span class="tooltip">Ring mig på 0732-09 63 20</span>
+                </a>
+                <a href="mailto:angelica.nylander@outlook.com" aria-label="Skicka e-post till mig">
+                    <img src="images/mail-open-fill.png" alt="E-post">
+                    <span class="tooltip">Skicka e-post</span>
+                </a>
+                <a href="https://www.linkedin.com/in/angelica-nylander-bb894b30/" target="_blank" aria-label="Besök min LinkedIn-profil">
+                    <img src="images/linkedin-box-fill.png" alt="LinkedIn">
+                    <span class="tooltip">Besök min LinkedIn</span>
+                </a>
+                <a href="https://github.com/angien90" target="_blank" aria-label="Besök min GitHub-profil">
+                    <img src="images/github-fill.png" alt="GitHub">
+                    <span class="tooltip">Besök min GitHub</span>
+                </a>
+                <a href="https://angien90.github.io/CV" target="_blank" aria-label="Läs mitt CV">
+                    <img src="images/cv_icon.png" alt="CV">
+                    <span class="tooltip">Läs mitt CV</span>
+                </a>
+            </span>
+        </section>    
+    </aside>
+
+    <main>
+        <section id="projects" class="projects">
+        <h2>Mina projekt</h2>
+        </section>
+        
+        <section class="projects-grid">
+            <article class="project-card" data-aos="zoom-in">
+                <img src="images/historiska_roster.webp" alt="Historiska Röster" />
+                <div class="project-content">
+                    <h4>Historiska Röster</h4>
+                    <p>HTML + SCSS + JavaScript</p> 
+                    <p>Den officiell hemsida för forskargruppen Historiska Röster. Jag har byggt upp sidan från grunden och driver den åt dem idag.</p>
+                    <a href="https://historiskaroster.se/" target="_blank" class="btn">Besök hemsidan</a>
+                </div>
+            </article> 
+
+            <article class="project-card" data-aos="zoom-in">
+                <img src="images/API.png" alt="Express Server & API" />
+                <div class="project-content">
+                    <h4>Express Server</h4>
+                    <p>HTML + SCSS + JavaScript + Typescript + phpMyAdmin</p>
+                    <p>Detta var en individuell inlämning i kursen API. Själva frontend delen ingick inte men lade till detta ändå. I README filen finns mer information om projektet och dess resultat. </p>
+                    <span class="button">
+                        <a href="https://angien90.github.io/Produktkatalog/" target="_blank" class="btn">Resultat</a>
+                        <a href="https://github.com/angien90/Produktkatalog" target="_blank" class="btn">Kod & README</a>
+                    </span>
+                </div>
+            </article>
+
+            <article class="project-card" data-aos="zoom-in">
+                <img src="images/javascript_musikquiz.png" alt="Musik quiz" />
+                <div class="project-content">
+                    <h4>Musik quiz</h4>
+                    <p>HTML + SCSS + JavaScript + Typescript</p> 
+                    <p>Detta var ett grupparbete under kursen Javascript där vi skulle ta fram ett Quiz där användaren får gissa på låttexter.</p>
+                    <span class="button">  
+                        <a href="https://angien90.github.io/Musik-quiz/" target="_blank" class="btn">Resultat</a>
+                        <a href="https://github.com/angien90/Musik-quiz" target="_blank" class="btn">Kod & README</a>
+                    </span>
+                    </div>
+            </article>
+
+            <article class="project-card" data-aos="zoom-in">
+                <img src="images/javascript_webbshop.png" alt="Webbshop" />
+                <div class="project-content">
+                    <h4>Webbshop</h4>
+                    <p>HTML + SCSS + JavaScript</p> 
+                    <p>Mitt första projekt i Javascript kursen. Här skulle vi bygga en webbshop för munkar.</p>
+                    <span class="button">                    
+                        <a href="https://angien90.github.io/Gottfrids-Gyllene-Munkar/" target="_blank" class="btn">Resultat</a>
+                        <a href="https://github.com/angien90/Gottfrids-Gyllene-Munkar" target="_blank" class="btn">Kod & README</a>
+                    </span>
+                </div>
+            </article>
+
+            <article class="project-card" data-aos="zoom-in">
+                <img src="images/vue_todo.png" alt="Todo-app" />
+                <div class="project-content">
+                    <h4>Todo</h4>
+                    <p>Vue.js + Firebase</p> 
+                    <p>En responsiv app för att spara och dela recept.</p>
+                    <span class="button"> 
+                        <a href="https://angien90.github.io/Arbetsmetodik_vue/" target="_blank" class="btn">Resultat</a>
+                        <a href="https://github.com/angien90/Arbetsmetodik_vue" target="_blank" class="btn">Kod & README</a>
+                    </span>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer data-aos="fade-up">
+        <a href="tel:+46732096320" target="_blank" aria-label="Ring mig på telefonnummer 0732 09 63 20">
+            <img src="images/phone-fill.png" alt="Telefon">
+            <span class="tooltip">Ring mig på 0732-09 63 20</span>
+        </a>
+        <a href="mailto:angelica.nylander@outlook.com" aria-label="Skicka e-post till mig">
+            <img src="images/mail-open-fill.png" alt="E-post">
+            <span class="tooltip">Skicka e-post</span>
+        </a>
+        <a href="https://www.linkedin.com/in/angelica-nylander-bb894b30/" target="_blank" aria-label="Besök min LinkedIn-profil">
+            <img src="images/linkedin-box-fill.png" alt="LinkedIn">
+            <span class="tooltip">Besök min LinkedIn</span>
+        </a>
+        <a href="https://github.com/angien90" target="_blank" aria-label="Besök min GitHub-profil">
+            <img src="images/github-fill.png" alt="GitHub">
+            <span class="tooltip">Besök min GitHub</span>
+        </a>
+        <a href="https://angien90.github.io/CV" target="_blank" aria-label="Läs mitt CV">
+            <img class="icon" src="images/cv_icon.png" alt="CV">
+            <span class="tooltip">Läs mitt CV</span>
+        </a>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- AOS-initialisering -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</body>
+</html>

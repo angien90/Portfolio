@@ -1,0 +1,122 @@
+body {
+  flex-direction: row;
+}
+
+/* Header */
+header {
+  position: absolute;
+  z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    top: 20px;
+    list-style: none; 
+    text-transform: uppercase; 
+}
+
+.nav-links a {
+  font-size: 1.5rem;
+}
+
+.hamburger {
+    display: none; 
+}
+
+nav ul {
+    font-size: 2em; 
+}
+
+[id]::before {
+  content: "";
+  display: block;
+  height: 90px;
+  visibility: hidden;
+}
+
+/* Aside */ 
+aside {
+  width: 35%;  
+  border-right: 10px double white;
+  box-sizing: border-box;
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+.profilepicture {
+  margin-top: 50px;
+}
+  
+aside h2 {
+  font-size: 1.5rem;
+}
+  
+aside p {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1.2em;
+}
+
+/* Main */
+main {  
+  width: 400px;
+  border-top: 4px solid white;
+  margin-bottom: 70px;
+  border-left: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 0;
+}
+  
+main h2 {
+  margin-top: 50px;
+  font-size: 2.5em;
+}
+  
+main h3 {
+  font-size: 2em;
+}
+  
+main h4 {
+  font-size: 1.2em;
+  hyphens: none;
+}
+  
+main p {
+  font-size: 1.2em;
+  hyphens: none;
+}
+
+.projects {
+    top: 0;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.project-card {
+  width: 450px;
+}
+
+.project-card img {
+  height: 250px;
+}
+
+/* Footer */  
+footer {
+  align-items: flex-end;          
+  height: 50px;                 
+}
+  
+footer img {
+  margin-left: 40px;
+  margin-right: 40px;                  
+}

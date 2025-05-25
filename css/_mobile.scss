@@ -1,0 +1,518 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'El Messiri', sans-serif;
+  display: flex; 
+  flex-direction: column;
+  min-height: 100vh; 
+  margin: 0;
+  transition: background-color 0.5s, color 0.5s; 
+}
+  
+/* Mörkt & ljust läge */
+  body.light-mode header,
+  body.light-mode .nav-links.active {
+    background: #f4f4f4;
+    color: black;
+  }
+
+  body.light-mode aside {
+    background-color: #f4f4f4; 
+    color: black;
+  }
+  
+  body.light-mode main {
+    background-color: #e0e0e0;
+    color: black;
+  }
+
+  body.light-mode h1, 
+  body.light-mode h2,
+  body.light-mode h3 {
+    background: linear-gradient(90deg, #B35229, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  body.light-mode .nav-links a {
+    color: #cb7547;
+  }
+
+  body.dark-mode header,
+  body.dark-mode .nav-links.active {
+    background: #333;
+    color: white;
+  }
+
+  body.dark-mode aside {
+    background-color: #333;
+    color: white;
+  }
+  
+  body.dark-mode main {
+    background: #333;
+    color: white;
+}
+
+  body.dark-mode h1, 
+  body.dark-mode h2, 
+  body.dark-mode h3,
+  body.dark-mode .nav-links a {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  body.dark-mode .nav-links a {
+    color: #ff956b;
+  }
+
+  body.dark-mode footer {
+    background: #333;
+    color: white;
+  }
+  
+  body.light-mode a img {
+    filter: invert(0%) sepia(100%) hue-rotate(180deg); 
+  }
+  
+  body.dark-mode a img {
+    filter: invert(100%);
+  }
+  
+  /* Toogle funktion */
+  .theme-switch-wrapper {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 44px;
+  }
+  
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: 0.4s;
+    border-radius: 44px;
+    width: 80px;
+    height: 44px;
+  }
+  
+  .slider:hover {
+    box-shadow: 0 0 20px gray;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 36px;
+    width: 36px;
+    left: 4px;
+    bottom: 4px;
+    background-image: url('../images/dark_mode.svg') !important;
+    transition: 0.4s;
+    border-radius: 50%;
+    background-size: cover;
+  }
+  
+  input:checked + .slider {
+    background-color: gray;
+  }
+  
+  input:checked + .slider:hover {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(36px);
+    background-image: url('../images/light_mode.svg') !important;
+    background-size: cover;
+  }
+  
+  body.light-mode .tooltip {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+  }
+  
+  body.dark-mode .tooltip {
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: black; 
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+  }
+
+/* Navigering */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    border-bottom: 10px double white;
+    height: 75px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    position: relative;
+    width: 100%;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    z-index: 999;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    height: 100vh;
+    overflow-x: hidden;
+    top: 0px;
+    z-index: 999;
+    padding-top: 80px;
+    padding-left: 0;
+    text-transform: uppercase;
+}
+
+/* --- Mobilanpassning (hamburgermeny) --- */
+.hamburger {
+    display: block; 
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: #cb7547;
+    cursor: pointer;
+    z-index: 1000;
+    padding-left: 20px;
+    margin-top: 5px;
+    border-radius: 5px; 
+}
+
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+    font-size: 1.5rem;
+}
+
+/* Innehåll i aside (vänsterpanelen) */
+aside {
+    background-color: #f4f4f4; 
+    padding: 10px; 
+    border-right: 4px solid white;
+    border-left: 4px solid white;
+    border-bottom: 10px double white;
+}
+
+.profilepicture {
+  width: 50%;
+  max-width: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+  border: 4px solid #ddd;
+}
+
+aside h1 {
+  margin-top: 60px;
+  margin-bottom: 10px; 
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 1.9em;
+}
+
+aside h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5em;
+}
+
+aside p {
+  text-align: center;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1.2em;
+}
+
+.contact {
+  margin-bottom: 40px;
+}
+
+.contact p {
+  margin-bottom: 20px;
+}
+
+.contact-icons-aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-icons-aside a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  display: inline-block;
+  margin: 5px;
+}
+
+.contact-icons-aside a:hover {
+  transform: scale(1.2);
+}
+
+.contact-icons-aside img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Tooltip för ikonerna */
+.contact-icons-aside .tooltip {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact-icons-aside a:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Innehåll i main (högerpanelen) */
+main {
+  background-color: #e0e0e0; 
+  padding: 10px; 
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  border-right: 4px solid white;
+  border-left: 4px solid white;
+  margin-bottom: 60px;
+  flex: 1;
+}
+
+main h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2.5em;
+}
+
+main h3 {
+  margin-bottom: 0px;
+  margin-top: 40px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+main h4 {
+  margin-bottom: -10px;
+  font-size: 1.2em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+main p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.material-symbols-outlined {
+  display: inline-block;
+  vertical-align: middle;  
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+  
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  padding: 20px 20px;
+}
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .project-content {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .project-content h4 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    color: #222;
+  }
+  
+  .project-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #cb7547;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #cb7547;
+  }
+
+/* Footer */
+footer {
+  position: relative;
+  justify-content: space-evenly;  
+  align-items: flex-end;         
+  padding: 0px;
+  background-color: #f4f4f4;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  border-top: 10px double white;
+  height: 50px;  
+  display: block; 
+  text-align: center;
+  padding-top: 10px;          
+}
+
+footer a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  display: inline-block; 
+  margin: 5px;
+}
+
+footer a:hover {
+  transform: scale(1.2);
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;  
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Tooltip-stil */
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Visa tooltip vid hover */
+footer a:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px); 
+}
