@@ -35,7 +35,7 @@ html, body {
   }
 
   body.light-mode .nav-links a {
-    color: #cb7547;
+    color: #d27b4b;
   }
 
   body.dark-mode header,
@@ -209,7 +209,7 @@ header {
     font-size: 40px;
     background: none;
     border: none;
-    color: #cb7547;
+    color: #d27b4b;
     cursor: pointer;
     z-index: 1000;
     padding-left: 20px;
@@ -285,7 +285,6 @@ aside p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #f4f4f4;
   padding: 10px 0;
   width: 100%;
   text-align: center;
@@ -437,17 +436,24 @@ main p {
   
   .btn {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #cb7547;
+    padding: 0.75rem 1.5rem;
+    background-color: #d27b4b;
     color: white;
-    border-radius: 5px;
+    border: none;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   
   .btn:hover {
-    background-color: #cb7547;
+    background-color: #b7673c;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 
 /* Footer */
