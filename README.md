@@ -1,0 +1,1 @@
+När ett nytt projekt ska lanceras. Gå in i index.html lägg till det nya projektet, committa och skapa sedan en pull request från main till gh.pages. 
